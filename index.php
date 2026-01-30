@@ -6,35 +6,41 @@ require_once 'includes/navbar.php';
 ?>
 
 <!-- Premium Hero Section (Swiper.js with Shatter Effect) -->
-<section class="hero-section position-relative overflow-hidden p-0 m-0 bg-black" style="height: 750px;">
+<section class="hero-section position-relative overflow-hidden p-0 m-0 bg-black" style="height: 850px;">
+
+
 
     <!-- Swiper Container -->
     <div class="swiper hero-swiper h-100 w-100">
         <div class="swiper-wrapper">
             <!-- Slide 1 -->
-            <div class="swiper-slide position-relative" data-bg="assets/css/banner1.png">
+            <div class="swiper-slide position-relative" data-bg="assets/images/siemens_hero_banner.png" style="background-color: #004b87;">
+                <!-- MOBILE FALLBACK IMAGE: Ensures visibility on all devices -->
+                <img src="assets/images/siemens_hero_banner.png" class="d-lg-none w-100 h-100 position-absolute top-0 start-0" style="object-fit: cover; z-index: 1;">
+                
                 <div class="container-fluid px-5 h-100 position-relative z-3">
                     <div class="row h-100 align-items-center">
                         <div class="col-lg-8">
-                            <!-- Badge Removed -->
-                            <!-- Text Removed as per request -->
                                 
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Slide 2 -->
-            <div class="swiper-slide position-relative" data-bg="assets/css/banner2.png">
-                 <div class="container-fluid px-5 h-100 position-relative z-3">
+            <!-- Slide 2 (Restored Old Banner) -->
+            <div class="swiper-slide position-relative" data-bg="assets/css/siemens_sinova_banner.png" style="background-color: #000;">
+                <img src="assets/css/siemens_sinova_banner.png" class="d-lg-none w-100 h-100 position-absolute top-0 start-0" style="object-fit: cover; z-index: 1;">
+                <div class="container-fluid px-5 h-100 position-relative z-3">
                     <div class="row h-100 align-items-center">
                         <div class="col-lg-8">
-                            <!-- Text Removed as per request -->
+                                
                         </div>
                     </div>
                 </div>
             </div>
+
              <!-- Slide 3 -->
-            <div class="swiper-slide position-relative" data-bg="assets/css/banner3.png">
+            <div class="swiper-slide position-relative" data-bg="assets/css/banner3.png" style="background-color: #000;">
+                 <img src="assets/css/banner3.png" class="d-lg-none w-100 h-100 position-absolute top-0 start-0" style="object-fit: cover; z-index: 1;">
                  <div class="container-fluid px-5 h-100 position-relative z-3">
                      <div class="row h-100 align-items-center">
                         <div class="col-lg-8">
@@ -47,23 +53,28 @@ require_once 'includes/navbar.php';
                 </div>
             </div>
             <!-- Slide 4 -->
-            <div class="swiper-slide position-relative" data-bg="assets/css/banner4.png">
+            <div class="swiper-slide position-relative" data-bg="assets/css/banner4.png" style="background-color: #000;">
+                 <img src="assets/css/banner4.png" class="d-lg-none w-100 h-100 position-absolute top-0 start-0" style="object-fit: cover; z-index: 1;">
                  <div class="container h-100 position-relative z-3"></div>
             </div>
              <!-- Slide 5 -->
-            <div class="swiper-slide position-relative" data-bg="assets/css/banner5.png">
+            <div class="swiper-slide position-relative" data-bg="assets/css/banner5.png" style="background-color: #000;">
+                 <img src="assets/css/banner5.png" class="d-lg-none w-100 h-100 position-absolute top-0 start-0" style="object-fit: cover; z-index: 1;">
                  <div class="container h-100 position-relative z-3"></div>
             </div>
              <!-- Slide 6 -->
-            <div class="swiper-slide position-relative" data-bg="assets/css/banner6.png">
+            <div class="swiper-slide position-relative" data-bg="assets/css/banner6.png" style="background-color: #000;">
+                 <img src="assets/css/banner6.png" class="d-lg-none w-100 h-100 position-absolute top-0 start-0" style="object-fit: cover; z-index: 1;">
                  <div class="container h-100 position-relative z-3"></div>
             </div>
              <!-- Slide 7 -->
-            <div class="swiper-slide position-relative" data-bg="assets/css/banner7.png">
+            <div class="swiper-slide position-relative" data-bg="assets/css/banner7.png" style="background-color: #000;">
+                 <img src="assets/css/banner7.png" class="d-lg-none w-100 h-100 position-absolute top-0 start-0" style="object-fit: cover; z-index: 1;">
                  <div class="container h-100 position-relative z-3"></div>
             </div>
              <!-- Slide 8 -->
-            <div class="swiper-slide position-relative" data-bg="assets/css/banner8.png">
+            <div class="swiper-slide position-relative" data-bg="assets/css/banner8.png" style="background-color: #000;">
+                 <img src="assets/css/banner8.png" class="d-lg-none w-100 h-100 position-absolute top-0 start-0" style="object-fit: cover; z-index: 1;">
                  <div class="container h-100 position-relative z-3"></div>
             </div>
         </div>
@@ -78,12 +89,28 @@ require_once 'includes/navbar.php';
 
 <style>
     /* Swiper & Tile Effect Styles */
+    /* Global Scroll Fix (Prevents "Eder Udher") */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100%;
+        position: relative;
+    }
+
+    .hero-section {
+        width: 100%;
+        max-width: 100vw;
+        overflow: hidden !important;
+    }
+
     .hero-swiper {
         background: #000;
+        width: 100%;
+        overflow: hidden;
     }
     .hero-swiper .swiper-slide {
         overflow: hidden;
         background: #000;
+        width: 100%;
     }
     
     /* FIX: Button Clickability over Shatter Grid */
@@ -201,104 +228,230 @@ require_once 'includes/navbar.php';
         
     }
 
-    /* --- MOBILE RESPONSIVE FIXES --- */
-    @media (max-width: 768px) {
-        .hero-section {
-            height: 500px !important; /* Use fixed height for mobile */
-            min-height: auto;
-        }
-        
-        .hero-section h1.display-3 {
-            font-size: 2.2rem !important; /* Smaller heading */
-            line-height: 1.2;
-            word-wrap: break-word;
-        }
-        
-        .hero-section .lead {
-            font-size: 1rem !important; /* Smaller text */
-            margin-bottom: 2rem !important;
-        }
+   @media(max-width:768px){
 
-        .hero-section .badge {
-            font-size: 0.7rem !important;
-        }
-        
-        /* Adjust Buttons */
-        .hero-section .btn {
-            padding: 10px 25px !important;
-            font-size: 0.9rem !important;
-        }
-
-        /* Hide Nav Arrows on Mobile (Swipe is better) */
-        .swiper-button-next, .swiper-button-prev {
-            display: none !important;
-        }
-        
-        /* Center Content on Mobile */
-        .hero-section .row {
-            text-align: center !important;
-            justify-content: center !important;
-        }
-        .hero-section .col-lg-8 {
-            padding: 0 20px;
-        }
+    .hero-section{
+        height:55vh;     /* Phone par perfect */
+        min-height:420px;
     }
+
+    .swiper-slide{
+        background-position:60% center;
+        /* 👉 Isse left wala product cut nahi hoga */
+    }
+
+    /* arrows hide */
+    .swiper-button-next,
+    .swiper-button-prev{
+        display:none;
+    }
+
+}
+
+
+        /* FORCE background image on slides */
+        .hero-swiper .swiper-slide {
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-color: transparent !important;
+        }
+
+        .hero-swiper {
+            background: transparent !important;
+        }
+
+        /* Hero height fix - DESKTOP */
+        .hero-section {
+            width: 100%;
+            height: 650px; /* Precise height */
+            position: relative;
+        }
+
+        .hero-swiper,
+        .hero-swiper .swiper-slide {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Background Image Direct */
+        .hero-swiper .swiper-slide {
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+        }
+        
+        /* 🔥 MOBILE RESPONSIVE FIX (Alignment & Alignment) */
+        @media(max-width: 992px){
+            
+            /* 1. Control Height - AUTO (Removes White Bars) */
+            .hero-section {
+                height: auto !important;       
+                min-height: 0 !important;  
+                background: transparent !important; 
+                padding: 0 !important; 
+                margin: 0 !important;
+                margin-top: -60px !important; /* Aggressive Pull-Up */
+                position: relative;
+                z-index: 1;
+            }
+            
+            /* 2. Handle Image Scaling */
+            .hero-swiper,
+            .hero-swiper .swiper-slide {
+                height: auto !important;       
+                background: transparent !important;
+                display: block !important;    
+                min-height: 0 !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            
+            /* If using IMG tag: FIT PROPERLY & IN FLOW */
+            .hero-swiper img {
+                display: block !important;     
+                width: 100% !important;        
+                height: auto !important;       
+                object-fit: contain !important; 
+                margin: 0 !important;
+                padding: 0 !important;
+                
+                /* 🚨 CRITICAL FIX: Put image in flow so container doesn't collapse */
+                position: relative !important; 
+                top: 0 !important;
+                left: 0 !important;
+                
+                /* Clarity */
+                image-rendering: -webkit-optimize-contrast;
+            }
+
+            /* If using CSS Background: FORCE ASPECT RATIO HACK */
+            .swiper-slide {
+                background: transparent !important; 
+                min-height: 0 !important; 
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            /* 3. Center Content (Hidden mainly) */
+            .hero-section .container-fluid, 
+            .hero-section .row {
+                display: none !important; /* Hide overlay container completely */
+            }
+            
+            .hero-section .col-lg-8 {
+                width: 100% !important;
+                padding: 0 !important;
+            }
+
+            /* 4. Text Overlay Hidden */
+            .hero-section h1, .hero-section .display-3, .hero-section .lead, .hero-section .btn {
+                display: none !important; 
+            }
+            
+            .shatter-grid, .shatter-overlay, .swiper-button-next, .swiper-button-prev {
+                display: none !important;
+            }
+        }
+
+.hero-swiper,
+.hero-swiper .swiper-slide{
+    width:100%;
+    height:100%;
+}
+
+/* Background Image Direct */
+.hero-swiper .swiper-slide{
+    background-size:cover !important;
+    background-position:center !important;
+    background-repeat:no-repeat !important;
+}
+
+/* 🔥 MOBILE FIX */
+/* 🔥 MOBILE FIX - CLEANUP COMPLETE */
+/* The conflicting 60vh rule has been removed to prevent white space bars */
+
+    
+
+    
+
+     
+
+    
 </style>
 
 <!-- Script for Shatter Effect -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         
-        // 1. Generate Tiles for each slide
+        // 1. Generate Tiles for each slide OR Handle Mobile Fallback
         const slides = document.querySelectorAll('.hero-swiper .swiper-slide');
-        const rows = 5; 
-        // Responsive Columns: 4 cols for mobile (<768px), 8 cols for desktop
-        const cols = window.innerWidth < 768 ? 4 : 8; 
         
-        slides.forEach(slide => {
-            const bgImage = slide.getAttribute('data-bg');
-            if(!bgImage) return;
+        // MOBILE & TABLET FIX (<=1200px)
+        if (window.innerWidth <= 1200) {
 
-            // Create Grid Container
-            const grid = document.createElement('div');
-            grid.className = 'shatter-grid';
-            
-            // Create Overlay (for text readability)
-            const overlay = document.createElement('div');
-            overlay.className = 'shatter-overlay';
-            
-            // PREPEND so they sit BEHIND the existing content container in the DOM
-            // This ensures buttons/text are naturally on top and clickable
-            slide.prepend(grid);
-            slide.prepend(overlay);
-
-            // Generate Tiles
-            for(let r=0; r<rows; r++) {
-                for(let c=0; c<cols; c++) {
-                    const tile = document.createElement('div');
-                    tile.className = 'shatter-tile';
-                    tile.style.width = `${100/cols}%`;
-                    tile.style.height = `${100/rows}%`;
-                    
-                    // Set Background Image & Position
-                    tile.style.backgroundImage = `url('${bgImage}')`;
-                    tile.style.backgroundSize = `${cols*100}% ${rows*100}%`;
-                    tile.style.backgroundPosition = `${(c / (cols-1)) * 100}% ${(r / (rows-1)) * 100}%`;
-                    
-                    // Randomize Start Position
-                    const randomX = (Math.random() - 0.5) * 500;
-                    const randomY = (Math.random() - 0.5) * 500;
-                    const randomRotate = (Math.random() - 0.5) * 360;
-                    // FASTER RANDOM DELAY: Max 0.4s 
-                    const randomDelay = Math.random() * 0.4; 
-                    
-                    tile.style.transform = `translate3d(${randomX}px, ${randomY}px, 0) rotate(${randomRotate}deg) scale(0)`;
-                    tile.style.transitionDelay = `${randomDelay}s`;
-                    
-                    grid.appendChild(tile);
+            // Apply normal background images instead of shatter tiles
+            document.querySelectorAll('.hero-swiper .swiper-slide').forEach(slide => {
+                const bg = slide.getAttribute('data-bg');
+                if (bg) {
+                    slide.style.backgroundImage = `url('${bg}')`;
+                    slide.style.backgroundSize = 'cover';
+                    slide.style.backgroundPosition = 'center';
+                    slide.style.backgroundRepeat = 'no-repeat';
                 }
-            }
-        });
+            });
+
+            // STOP shatter generation
+            // Continue to Swiper initialization
+        } else {
+             // DESKTOP: Generate Shatter Tiles
+             const rows = 5; 
+             const cols = 8; 
+             
+             slides.forEach(slide => {
+                 const bgImage = slide.getAttribute('data-bg');
+                 if(!bgImage) return;
+                 
+                 // Create Grid Container
+                 const grid = document.createElement('div');
+                 grid.className = 'shatter-grid';
+                 
+                 // Create Overlay (for text readability)
+                 const overlay = document.createElement('div');
+                 overlay.className = 'shatter-overlay';
+                 
+                 // PREPEND so they sit BEHIND the existing content container in the DOM
+                 slide.prepend(grid);
+                 slide.prepend(overlay);
+
+                 // Generate Tiles
+                 for(let r=0; r<rows; r++) {
+                     for(let c=0; c<cols; c++) {
+                         const tile = document.createElement('div');
+                         tile.className = 'shatter-tile';
+                         tile.style.width = `${100/cols}%`;
+                         tile.style.height = `${100/rows}%`;
+                         
+                         // Set Background Image & Position
+                         tile.style.backgroundImage = `url('${bgImage}')`;
+                         tile.style.backgroundSize = `${cols*100}% ${rows*100}%`;
+                         tile.style.backgroundPosition = `${(c / (cols-1)) * 100}% ${(r / (rows-1)) * 100}%`;
+                         
+                         // Randomize Start Position
+                         const randomX = (Math.random() - 0.5) * 500;
+                         const randomY = (Math.random() - 0.5) * 500;
+                         const randomRotate = (Math.random() - 0.5) * 360;
+                         // FASTER RANDOM DELAY: Max 0.4s 
+                         const randomDelay = Math.random() * 0.4; 
+                         
+                         tile.style.transform = `translate3d(${randomX}px, ${randomY}px, 0) rotate(${randomRotate}deg) scale(0)`;
+                         tile.style.transitionDelay = `${randomDelay}s`;
+                         
+                         grid.appendChild(tile);
+                     }
+                 }
+             });
+        }
 
         // 2. Initialize Swiper
         const swiper = new Swiper('.hero-swiper', {
@@ -386,23 +539,23 @@ require_once 'includes/navbar.php';
 <!-- Principals Section (Logos) -->
 <style>
     .client-logo-box {
-        padding: 20px;
+        padding: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 150px; /* Fixed height for consistency */
+        height: 180px; /* Increased height */
     }
     .client-logo-box img {
-        max-height: 120px; /* increased from default/auto to make them look bigger */
+        max-height: 150px; /* Significantly increased logo size */
         width: auto;
         max-width: 100%;
         transition: transform 0.3s ease;
     }
     .client-logo-box:hover img {
-        transform: scale(1.1);
+        transform: scale(1.15);
     }
 </style>
-<section class="principals-section py-5 bg-white" data-aos="fade-up" data-aos-duration="1000">
+<section class="principals-section pt-2 pb-5 bg-white" data-aos="fade-up" data-aos-duration="1000">
     <div class="container">
         <div class="text-center mb-5">
             <h2 class="fw-bold display-5 mb-3" style="color: #333; font-weight: 300;">Our Principles</h2>
@@ -446,6 +599,18 @@ require_once 'includes/navbar.php';
                         <img src="assets/css/Lapp.png" alt="LAPP" class="img-fluid">
                     </div>
                 </div>
+                <!-- Connectwell -->
+                <div class="swiper-slide">
+                    <div class="client-logo-box">
+                        <img src="assets/css/connectwell.png" alt="Connectwell" class="img-fluid">
+                    </div>
+                </div>
+                <!-- Sinoplus -->
+                <div class="swiper-slide">
+                    <div class="client-logo-box">
+                        <img src="assets/css/sinoplus.jpg" alt="Sinoplus" class="img-fluid">
+                    </div>
+                </div>
                 
                 <!-- DUPLICATE FOR SMOOTH LOOP -->
                 <!-- Siemens -->
@@ -484,6 +649,12 @@ require_once 'includes/navbar.php';
                         <img src="assets/css/Lapp.png" alt="LAPP" class="img-fluid">
                     </div>
                 </div>
+                <!-- Connectwell -->
+                <div class="swiper-slide">
+                    <div class="client-logo-box">
+                        <img src="assets/css/connectwell.png" alt="Connectwell" class="img-fluid">
+                    </div>
+                </div>
             </div>
             </div>
 
@@ -508,7 +679,7 @@ require_once 'includes/navbar.php';
                 <div class="text-secondary" style="font-size: 0.9rem; line-height: 1.7; text-align: justify;">
                     <p>At <strong class="text-primary">S.B. Syscon Pvt. Ltd.</strong>, we are committed to delivering world-class electrical solutions that power progress across a wide spectrum of industries. With decades of experience and a deep understanding of industrial needs, we go beyond just supplying products—we partner with businesses to provide end-to-end, customized solutions that enhance efficiency, reliability, and sustainability.</p>
                     <p>Our expertise lies in offering sophisticated, efficient, and economical electrical products and turnkey solutions tailored to meet the unique requirements of our clients. Whether you’re in manufacturing, infrastructure, utilities, process industries, or emerging sectors, our offerings are designed to support diverse operational demands with precision and consistency.</p>
-                    <p>As authorized channel partners of some of the world’s most respected multinational brands—SIEMENS, LAPP, INNOMOTICS (Siemens Motors), SCHNEIDER ASCO, SECURE METERS, BCH, and FLENDER GEARBOXES—we bring cutting-edge technology, global quality standards, and proven reliability to the Indian industrial landscape.</p>
+                    <p>As authorized channel partners of some of the world’s most respected multinational brands—SIEMENS, LAPP, INNOMOTICS  (Siemens Motors), SCHNEIDER ASCO, SECURE METERS, BCH,   CONNECTWELL and FLENDER GEARBOXES—we bring cutting-edge technology, global quality standards, and proven reliability to the Indian industrial landscape.</p>
                     <p><strong class="text-primary">Our expansive portfolio includes:</strong> Switchgears & Power Distribution Products, Wires & Cables for diverse applications, Energy Monitoring & Management Solutions, Industrial Motors and Drives, Heavy-Duty Gearboxes, Modular Enclosures & Control Gear Products, Customized Electrical Panels & Accessories, and a wide array of value-added products to support all your project needs.</p>
                     
                     <p>

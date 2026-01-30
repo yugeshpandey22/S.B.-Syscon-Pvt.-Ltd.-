@@ -195,7 +195,7 @@ require_once 'includes/navbar.php';
                         <!-- Left: Brand Identity -->
                         <div class="brand-section">
                             <?php if(!empty($p['logo'])): ?>
-                                <img src="<?php echo htmlspecialchars($p['logo']); ?>" alt="<?php echo htmlspecialchars($p['name']); ?>" class="img-fluid" style="max-height: 90px; max-width: 220px;">
+                                <img src="<?php echo htmlspecialchars($p['logo']); ?>" alt="<?php echo htmlspecialchars($p['name']); ?>" class="img-fluid" style="max-height: 120px; max-width: 280px;">
                             <?php else: ?>
                                 <h4 class="mb-0 fw-bold text-dark"><?php echo htmlspecialchars($p['name']); ?></h4>
                             <?php endif; ?>

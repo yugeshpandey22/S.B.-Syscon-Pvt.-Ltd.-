@@ -375,7 +375,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     sendMail($email, $confirmSubject, $confirmBody); // Send to User
 
                     // 3. Send Notification Email to Admin
-                    $adminEmail = "pyugesh66@gmail.com";
+                    $adminEmail = "marcom.sbsyscon@gmail.com";
                     $adminSubject = "New Contact Query from $name";
                     $adminBody = "<strong>New Inquiry Received:</strong><br><br>Name: $name<br>Mobile: $mobile<br>Email: $email<br>Subject: $subject<br>Message: $message<br><br>Time: " . date('Y-m-d H:i:s');
                     

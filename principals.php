@@ -85,17 +85,27 @@ require_once 'includes/navbar.php';
                         $logoPath = htmlspecialchars($cert['brand_logo']);
                         $pdfPath = htmlspecialchars($cert['certificate_file']);
                         
-                        // Special handling for SINOVA (rebranded to SINOPLUS) and BCH
+                        // Specific Logo Overrides for consistency
                         $imgStyle = '';
-                        
-                        // Use clean BCH logo
-                        if (stripos($brandName, 'BCH') !== false || stripos($logoPath, 'bch') !== false) {
-                            $logoPath = 'assets/css/bch_final.png';
-                            // No invert needed for the new clean logo
-                        }
+                        $upperName = strtoupper($brandName);
 
-                        if (stripos($brandName, 'SINOVA') !== false) {
+                        if (strpos($upperName, 'SIEMENS') !== false) {
+                            $logoPath = 'assets/images/siemens-logo-2025.png';
+                        } elseif (strpos($upperName, 'SINOVA') !== false || strpos($upperName, 'SINOPLUS') !== false) {
                             $logoPath = 'assets/css/sinoplus.jpg';
+                        } elseif (strpos($upperName, 'INNOMOTICS') !== false) {
+                            $logoPath = 'assets/css/innomotics_new.png';
+                        } elseif (strpos($upperName, 'FLENDER') !== false) {
+                            $logoPath = 'assets/css/flender_new.png'; // Correct Flender Logo
+                        } elseif (strpos($upperName, 'SECURE') !== false) {
+                             $logoPath = 'assets/images/secure-logo-large.png'; // Correct Secure Logo
+                             $imgStyle = 'style="max-height: 110px;"';
+                        } elseif (strpos($upperName, 'LAPP') !== false) {
+                            $logoPath = 'assets/css/lapp_new.png';
+                        } elseif (strpos($upperName, 'ASCO') !== false) {
+                            $logoPath = 'assets/css/asco_new.png';
+                        } elseif (strpos($upperName, 'BCH') !== false) {
+                            $logoPath = 'assets/css/bch_final.png';
                         }
             ?>
             <div class="col">
@@ -155,7 +165,7 @@ require_once 'includes/navbar.php';
         }
         
         .brand-logo {
-            max-height: 80px; /* Adjusted to balance with button */
+            max-height: 120px; /* Increased size for better visibility */
             max-width: 100%;
             object-fit: contain;
             transition: transform 0.3s ease;
@@ -218,7 +228,7 @@ require_once 'includes/navbar.php';
             <div class="col">
                 <div class="tilt-card-principal h-100 bg-white">
                     <div class="card-content">
-                        <img src="assets/css/sinoplus.jpg" class="img-fluid mb-3 mx-auto d-block transform-3d" style="max-height: 50px;" alt="Sinoplus">
+                        <i class="fas fa-microchip fa-3x text-danger mb-4 transform-3d"></i>
                         <h5 class="fw-bold text-dark lh-base transform-3d">SINOPLUS – Switchgears <br><small class="text-muted fw-normal">(Formerly Sinova)</small></h5>
                     </div>
                 </div>
@@ -258,7 +268,7 @@ require_once 'includes/navbar.php';
             <div class="col">
                 <div class="tilt-card-principal h-100 bg-white">
                     <div class="card-content">
-                        <img src="assets/css/bch_final.png" class="img-fluid mb-3 mx-auto d-block transform-3d" style="max-height: 60px;" alt="BCH">
+                        <i class="fas fa-box fa-3x text-danger mb-4 transform-3d"></i>
                         <h5 class="fw-bold text-dark lh-base transform-3d">BCH Electric – Industrial Products and Enclosures</h5>
                     </div>
                 </div>

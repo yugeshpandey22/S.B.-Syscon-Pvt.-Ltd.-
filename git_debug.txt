@@ -1,0 +1,25 @@
+--- STATUS --- 
+On branch main
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    status_log.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	debug_git.bat
+	git_debug.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+--- REMOTE --- 
+origin	https://github.com/yugeshpandey22/S.B.-Syscon-Pvt.-Ltd.-.git (fetch)
+origin	https://github.com/yugeshpandey22/S.B.-Syscon-Pvt.-Ltd.-.git (push)
+--- LOG --- 
+commit d4bdb9ff90cef493c5554dbef9e963b9d9f3a856
+Author: Yugesh Pandey <pyugesh66@gmail.com>
+Date:   Wed Jan 28 14:48:15 2026 +0530
+
+    Upload to GitHub
+--- PUSH --- 
+To https://github.com/yugeshpandey22/S.B.-Syscon-Pvt.-Ltd.-.git
+   d0ed9f8..d4bdb9f  main -> main
